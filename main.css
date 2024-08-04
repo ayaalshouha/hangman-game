@@ -38,7 +38,10 @@ hr {
     }
   }
 }
-.handman-draw {
+.row {
+  display: flex;
+}
+.hangman-draw {
   flex: 1;
   background-color: #f8f8f8;
   padding: 20px;
@@ -50,19 +53,18 @@ hr {
   height: 280px;
   border-bottom: 4px solid #222;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
 
   .the-stand {
-    &::before {
-      content: "";
-      position: absolute;
-      width: var(--main-width);
-      background-color: var(--main-color);
-      height: 100%;
-      left: 50%;
-      margin-left: -2px;
-    }
+    content: "";
+    position: absolute;
+    width: var(--main-width);
+    background-color: var(--main-color);
+    height: 100%;
+    left: 50%;
+    margin-left: -2px;
   }
+
   .the-hang {
     &::before {
       content: "";
@@ -83,6 +85,95 @@ hr {
       height: 30px;
       left: 130px;
       top: 15px;
+    }
+  }
+
+  .the-rope {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    left: 95px;
+    top: 45px;
+    border: var(--main-width) dashed var(--main-color);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .the-man {
+    .head {
+      position: absolute;
+      left: 105px;
+      top: 55px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: var(--main-width) solid var(--main-color);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
+    .body {
+      position: absolute;
+      left: 130px;
+      top: 102px;
+      width: var(--main-width);
+      background-color: var(--main-color);
+      height: 110px;
+    }
+    .hands::before {
+      left: 85px;
+      transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+      -webkit-transform: rotate(30deg);
+    }
+    .hands::after {
+      left: 130px;
+      transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+    }
+    .hands::before,
+    .hands::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      top: 130px;
+      height: var(--main-width);
+      background-color: var(--main-color);
+    }
+
+    .legs::before {
+      left: 130px;
+      transform: rotate(30deg);
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+    }
+    .legs::after {
+      left: 85px;
+      transform: rotate(-30deg);
+      -webkit-transform: rotate(-30deg);
+      -moz-transform: rotate(-30deg);
+      -ms-transform: rotate(-30deg);
+      -o-transform: rotate(-30deg);
+    }
+    .legs::after,
+    .legs::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: var(--main-width);
+      background-color: var(--main-color);
+      top: 220px;
     }
   }
 }
