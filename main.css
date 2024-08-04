@@ -53,7 +53,7 @@ hr {
   height: 280px;
   border-bottom: 4px solid #222;
   position: relative;
-  /* margin: auto; */
+  margin: auto;
 
   .the-stand {
     content: "";
@@ -75,8 +75,6 @@ hr {
       left: 30px;
       top: 15px;
     }
-  }
-  .the-hang {
     &::after {
       content: "";
       position: absolute;
