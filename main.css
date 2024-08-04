@@ -6,6 +6,10 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+:root {
+  --main-width: 4px;
+  --main-color: #222;
+}
 .container {
   margin: 20px auto;
   width: 1000px;
@@ -16,4 +20,69 @@ body {
 
 hr {
   border: 1px solid #eee;
+}
+
+.game-info {
+  display: flex;
+
+  .game-name {
+    flex: 1;
+  }
+  .category {
+    flex: 1;
+    text-align: right;
+    span {
+      text-transform: capitalize;
+      color: #e91e63;
+      font-weight: bold;
+    }
+  }
+}
+.handman-draw {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 20px;
+  height: 324px;
+}
+
+.the-draw {
+  width: 60px;
+  height: 280px;
+  border-bottom: 4px solid #222;
+  position: relative;
+  margin: auto;
+
+  .the-stand {
+    &::before {
+      content: "";
+      position: absolute;
+      width: var(--main-width);
+      background-color: var(--main-color);
+      height: 100%;
+      left: 50%;
+      margin-left: -2px;
+    }
+  }
+  .the-hang {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      background-color: var(--main-color);
+      height: var(--main-width);
+      left: 30px;
+      top: 15px;
+    }
+  }
+  .the-hang {
+    &::after {
+      content: "";
+      position: absolute;
+      width: var(--main-width);
+      background-color: var(--main-color);
+      height: 30px;
+      left: 130px;
+      top: 15px;
+    }
+  }
 }
