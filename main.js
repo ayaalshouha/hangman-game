@@ -61,12 +61,20 @@ let guess_container = document.querySelector(".letters-guess");
 
 let value_arr = Array.from(value);
 
-//create spans
+//create guess spans
 value_arr.forEach((letter) => {
   let empty_span = document.createElement("span");
   //if letter is space
-  if (letter === ' ') {
+  if (letter === " ") {
     empty_span.className = "with-space";
   }
   guess_container.appendChild(empty_span);
+});
+
+// handle click on letters
+document.addEventListener("click", (e) => {
+  if(e.target.className === 'letter-box'){
+    e.target.classList.add("clicked");
+    
+  }
 });

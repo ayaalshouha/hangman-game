@@ -187,6 +187,11 @@ hr {
       cursor: pointer;
       margin-bottom: 10px;
     }
+    .letter-box.clicked {
+      background-color: #222;
+      opacity: 0.2;
+      pointer-events: none;
+    }
   }
 }
 
