@@ -59,7 +59,9 @@ document.querySelector(".category span").innerHTML = key_name;
 //select letters guess container
 let guess_container = document.querySelector(".letters-guess");
 
-let value_arr = Array.from(value);
+let value_arr = Array.from(value.toLowerCase());
+
+// console.log(value);
 
 //create guess spans
 value_arr.forEach((letter) => {
@@ -71,10 +73,29 @@ value_arr.forEach((letter) => {
   guess_container.appendChild(empty_span);
 });
 
+let spans = document.querySelectorAll(".letters-guess span");
+let span_arr = Array.from(spans);
+
+//set guess status
+let guess_status = false;
+
 // handle click on letters
 document.addEventListener("click", (e) => {
-  if(e.target.className === 'letter-box'){
+  if (e.target.className === "letter-box") {
     e.target.classList.add("clicked");
-    
+
+    let clicked_letter = e.target.innerHTML.toLowerCase();
+
+    value_arr.forEach((char, index) => {
+      if (char == clicked_letter) {
+        guess_status = true;
+        span_arr.forEach((span, i) => {
+          if (i === index) {
+            span.innerHTML = clicked_letter;
+          }
+        });
+        console.log(guess_status);
+      }
+    });
   }
 });
