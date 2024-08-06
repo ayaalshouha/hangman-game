@@ -52,7 +52,7 @@ let key_values = words[key_name];
 //get random value from certain key
 let value_num = Math.floor(Math.random() * key_values.length);
 let value = key_values[value_num];
-
+console.log(value);
 //add value into category info
 document.querySelector(".category span").innerHTML = key_name;
 
@@ -65,8 +65,8 @@ let value_arr = Array.from(value);
 value_arr.forEach((letter) => {
   let empty_span = document.createElement("span");
   //if letter is space
-  if (letter === "") {
+  if (letter === ' ') {
     empty_span.className = "with-space";
   }
-  guess_container.appendChild(empty_span); 
+  guess_container.appendChild(empty_span);
 });
