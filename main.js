@@ -43,19 +43,30 @@ const words = {
   countries: ["Syria", "Palestine", "Yemen", "Egypt", "Bahrain", "Qatar"],
 };
 
-function getCategoryName() {
-  //get random key
-  let all_keys = Object.keys(words);
-  let key_num = Math.floor(Math.random() * all_keys.length);
-  let key_name = all_keys[key_num];
-  let key_values = words[key_name];
+//get random key
+let all_keys = Object.keys(words);
+let key_num = Math.floor(Math.random() * all_keys.length);
+let key_name = all_keys[key_num];
+let key_values = words[key_name];
 
-  //get random value from certain key
-  let value_num = Math.floor(Math.random() * key_values.length);
-  let value = key_values[value_num];
+//get random value from certain key
+let value_num = Math.floor(Math.random() * key_values.length);
+let value = key_values[value_num];
 
-  //add value into category info
-  document.querySelector(".category span").innerHTML = key_name;
-}
+//add value into category info
+document.querySelector(".category span").innerHTML = key_name;
 
-getCategoryName();
+//select letters guess container
+let guess_container = document.querySelector(".letters-guess");
+
+let value_arr = Array.from(value);
+
+//create spans
+value_arr.forEach((letter) => {
+  let empty_span = document.createElement("span");
+  //if letter is space
+  if (letter === "") {
+    empty_span.className = "with-space";
+  }
+  guess_container.appendChild(empty_span); 
+});
