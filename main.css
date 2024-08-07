@@ -64,7 +64,6 @@ hr {
 
     .the-hang {
       display: none;
-
       &::before {
         content: "";
         position: absolute;
@@ -87,7 +86,6 @@ hr {
 
     .the-rope {
       display: none;
-
       width: 70px;
       height: 70px;
       border-radius: 50%;
@@ -184,6 +182,28 @@ hr {
       }
     }
   }
+
+  /* drawing the hangman depends on class wrongs attemps */
+  .hangman-draw.wrong-1 .the-draw {
+    display: block;
+  }
+  .hangman-draw.wrong-2 .the-stand {
+    display: block;
+  }
+  .hangman-draw.wrong-3 .the-hang {
+    display: block;
+  }
+
+  .hangman-draw.wrong-2 .the-man .head {
+    display: block;
+  }
+  .hangman-draw.wrong-2 .the-man .hands {
+    display: block;
+  }
+  .hangman-draw.wrong-2 .the-man .legs {
+    display: block;
+  }
+
   .letters {
     flex: 1;
     padding: 20px;
