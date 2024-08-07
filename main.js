@@ -101,6 +101,13 @@ document.addEventListener("click", (e) => {
       //increase the wrong attemps
       wrong_attemps++;
       the_draw.classList.add(`wrong-${wrong_attemps}`);
+      document.getElementById("failed").play();
+    } else {
+      document.getElementById("success").play();
+    }
+
+    if (wrong_attemps == 8) {
+      //finish game
     }
   }
 });
