@@ -283,7 +283,7 @@ hr {
 .popup {
   position: fixed;
   left: 50%;
-  top: 70%;
+  top: 80%;
   transform: translateX(-50%);
   width: 80%;
   background-color: #009688;
