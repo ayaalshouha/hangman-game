@@ -100,22 +100,26 @@ document.addEventListener("click", (e) => {
       wrong_attemps++;
       the_draw.classList.add(`wrong-${wrong_attemps}`);
       document.getElementById("failed").play();
-      //finish game if attemps = 8
       if (wrong_attemps === 8) {
-        endGame();
+        endGame("Game Over!!");
         letters_container.classList.add("finished");
       }
     } else {
       document.getElementById("success").play();
+      if (span_arr.filter((span) => span.innerHTML === "").length == 0) {
+        endGame("Congrats!");
+      }
     }
   }
 });
 
 //end game
-function endGame() {
+function endGame(message) {
   let div = document.createElement("div");
-  let divText = document.createTextNode(`Game Over, The Word is ${value.toUpperCase()}`);
+  let divText = document.createTextNode(
+    `${message}, The Word is ${value.toUpperCase()}`
+  );
   div.appendChild(divText);
-  div.className = 'popup'; 
+  div.className = "popup";
   document.body.appendChild(div);
 }
