@@ -263,7 +263,7 @@ hr {
     background-color: none;
     border-bottom: none;
     position: relative;
-    &::before {
+    /* &::before {
       position: absolute;
       content: "";
       background-color: #333;
@@ -276,7 +276,7 @@ hr {
       -moz-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
       -o-transform: translate(-50%, -50%);
-    }
+    } */
   }
 }
 

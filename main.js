@@ -66,6 +66,7 @@ value_arr.forEach((letter) => {
   //if letter is space
   if (letter === " ") {
     empty_span.className = "with-space";
+    empty_span.innerHTML = '-'; 
   }
   guess_container.appendChild(empty_span);
 });
