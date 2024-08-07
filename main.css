@@ -262,7 +262,7 @@ hr {
   span.with-space {
     background-color: none;
     border-bottom: none;
-    position: relative;
+    /* position: relative; */
     /* &::before {
       position: absolute;
       content: "";
