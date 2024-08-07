@@ -58,10 +58,7 @@ document.querySelector(".category span").innerHTML = key_name;
 
 //select letters guess container
 let guess_container = document.querySelector(".letters-guess");
-
 let value_arr = Array.from(value.toLowerCase());
-
-// console.log(value);
 
 //create guess spans
 value_arr.forEach((letter) => {
@@ -75,12 +72,14 @@ value_arr.forEach((letter) => {
 
 let spans = document.querySelectorAll(".letters-guess span");
 let span_arr = Array.from(spans);
-
-//set guess status
-let guess_status = false;
+let wrong_attemps = 0;
+let the_draw = document.querySelector(".hangman-draw");
 
 // handle click on letters
 document.addEventListener("click", (e) => {
+  //set guess status
+  let guess_status = false;
+
   if (e.target.className === "letter-box") {
     e.target.classList.add("clicked");
 
@@ -94,8 +93,14 @@ document.addEventListener("click", (e) => {
             span.innerHTML = clicked_letter;
           }
         });
-        console.log(guess_status);
       }
     });
+
+    //draw a part when status is false in each click
+    if (!guess_status) {
+      //increase the wrong attemps
+      wrong_attemps++;
+      the_draw.classList.add(`wrong-${wrong_attemps}`);
+    }
   }
 });

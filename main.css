@@ -48,6 +48,8 @@ hr {
     border-bottom: 4px solid #222;
     position: relative;
     margin: auto;
+    left: -60px;
+    display: none;
 
     .the-stand {
       content: "";
@@ -57,9 +59,12 @@ hr {
       height: 100%;
       left: 50%;
       margin-left: -2px;
+      display: none;
     }
 
     .the-hang {
+      display: none;
+
       &::before {
         content: "";
         position: absolute;
@@ -81,6 +86,8 @@ hr {
     }
 
     .the-rope {
+      display: none;
+
       width: 70px;
       height: 70px;
       border-radius: 50%;
@@ -107,6 +114,7 @@ hr {
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
+        display: none;
       }
       .body {
         position: absolute;
@@ -115,6 +123,10 @@ hr {
         width: var(--main-width);
         background-color: var(--main-color);
         height: 110px;
+        display: none;
+      }
+      .hands {
+        display: none;
       }
       .hands::before {
         left: 85px;
@@ -142,6 +154,9 @@ hr {
         background-color: var(--main-color);
       }
 
+      .legs {
+        display: none;
+      }
       .legs::before {
         left: 130px;
         transform: rotate(30deg);
