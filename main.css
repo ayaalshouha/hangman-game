@@ -228,6 +228,9 @@ hr {
       cursor: pointer;
       margin-bottom: 10px;
     }
+    .letters.finished {
+      pointer-events: none;
+    }
     .letter-box.clicked {
       background-color: #222;
       opacity: 0.2;

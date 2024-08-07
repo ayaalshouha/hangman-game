@@ -102,12 +102,13 @@ document.addEventListener("click", (e) => {
       wrong_attemps++;
       the_draw.classList.add(`wrong-${wrong_attemps}`);
       document.getElementById("failed").play();
+      if (wrong_attemps == 8) {
+        //finish game
+        // endGame();
+        letters_container.classList.add("finished");
+      }
     } else {
       document.getElementById("success").play();
-    }
-
-    if (wrong_attemps == 8) {
-      //finish game
     }
   }
 });
