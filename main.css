@@ -194,13 +194,19 @@ hr {
     display: block;
   }
 
-  .hangman-draw.wrong-2 .the-man .head {
+  .hangman-draw.wrong-4 .the-rope {
     display: block;
   }
-  .hangman-draw.wrong-2 .the-man .hands {
+  .hangman-draw.wrong-5 .the-man .head {
     display: block;
   }
-  .hangman-draw.wrong-2 .the-man .legs {
+  .hangman-draw.wrong-6 .the-man .body {
+    display: block;
+  }
+  .hangman-draw.wrong-7 .the-man .hands {
+    display: block;
+  }
+  .hangman-draw.wrong-8 .the-man .legs {
     display: block;
   }
 
