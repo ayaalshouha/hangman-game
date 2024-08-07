@@ -209,7 +209,9 @@ hr {
   .hangman-draw.wrong-8 .the-man .legs {
     display: block;
   }
-
+  .letters.finished {
+    pointer-events: none;
+  }
   .letters {
     flex: 1;
     padding: 20px;
@@ -228,9 +230,7 @@ hr {
       cursor: pointer;
       margin-bottom: 10px;
     }
-    .letters.finished {
-      pointer-events: none;
-    }
+
     .letter-box.clicked {
       background-color: #222;
       opacity: 0.2;
@@ -278,4 +278,24 @@ hr {
       -o-transform: translate(-50%, -50%);
     }
   }
+}
+
+.popup {
+  position: fixed;
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%);
+  width: 80%;
+  background-color: #009688;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 24px;
+  padding: 30px;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }

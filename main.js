@@ -77,7 +77,6 @@ let the_draw = document.querySelector(".hangman-draw");
 
 // handle click on letters
 document.addEventListener("click", (e) => {
-  //set guess status
   let guess_status = false;
 
   if (e.target.className === "letter-box") {
@@ -96,15 +95,14 @@ document.addEventListener("click", (e) => {
       }
     });
 
-    //draw a part when status is false in each click
+    //draw a part when status is false in each click / handle sounds
     if (!guess_status) {
-      //increase the wrong attemps
       wrong_attemps++;
       the_draw.classList.add(`wrong-${wrong_attemps}`);
       document.getElementById("failed").play();
-      if (wrong_attemps == 8) {
-        //finish game
-        // endGame();
+      //finish game if attemps = 8
+      if (wrong_attemps === 8) {
+        endGame();
         letters_container.classList.add("finished");
       }
     } else {
@@ -112,3 +110,12 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+
+//end game
+function endGame() {
+  let div = document.createElement("div");
+  let divText = document.createTextNode(`Game Over, The Word is ${value.toUpperCase()}`);
+  div.appendChild(divText);
+  div.className = 'popup'; 
+  document.body.appendChild(div);
+}
